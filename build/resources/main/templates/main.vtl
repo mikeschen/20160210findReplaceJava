@@ -2,8 +2,12 @@
 
       <form action='/detector' method='get'>
         <div class="form-group">
-          <label for="number">Enter Something</label>
-          <input id="$number" name="number" class="form-control" type="text">
+          <label for="userInput">Enter sentence to be changed</label>
+          <input id="userInput" name="userInput" class="form-control" type="text">
+          <label for="searchWord">Enter word to search for</label>
+          <input id="searchWord" name="searchWord" class="form-control" type="text">
+          <label for="replaceWord">Enter word to replace the search word with</label>
+          <input id="replaceWord" name="replaceWord" class="form-control" type="text">
         </div>
-         <button type="submit" class="btn">Enter</button>
+         <button type="submit" class="btn">Get new sentence</button>
        </form>

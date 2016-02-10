@@ -11,25 +11,26 @@ import org.apache.commons.lang.StringUtils;
 
 public class FindReplace {
   public static void main(String[] args) {
-    // String layout = "templates/layout.vtl";
-    //
-    // get("/", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   model.put("template", "templates/main.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
-    //
-    // get("/detector", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   model.put("template", "templates/detector.vtl");
-    //   String userStringNumber = request.queryParams("number");
-    //   Integer userNumber = Integer.parseInt(userStringNumber);
-    //   ArrayList<Object> results = new ArrayList<Object>();
-    //   results = PingPong.isPingPong(userNumber);
-    //
-    //   model.put("results", results);
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
+    String layout = "templates/layout.vtl";
+
+    get("/", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/main.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/detector", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/detector.vtl");
+      String userString = request.queryParams("userInput");
+      String searchWord = request.queryParams("searchWord");
+      String replaceWord = request.queryParams("replaceWord");
+
+      String results = FindReplace.replaceWord(userString, searchWord, replaceWord);
+
+      model.put("results", results);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 
   public static String replaceWord(String userString, String searchWord, String replaceWord) {
