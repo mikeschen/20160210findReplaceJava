@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="FindReplaceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-02-10T19:01:02" hostname="epicodus-64.local" time="0.005">
+  <properties/>
+  <testcase name="checkWinner_returnsNewWordinAsentence" classname="FindReplaceTest" time="0.004"/>
+  <testcase name="checkWinner_returnsNewPhrase_true" classname="FindReplaceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
