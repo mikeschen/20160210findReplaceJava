@@ -34,7 +34,8 @@ public class FindReplace {
   }
 
   public static String replaceWord(String userString, String searchWord, String replaceWord) {
-    String[] words = userString.split("\\s+");
+
+    String[] words = userString.split("([.,!?:;'\"-]|\\s)+");
     for (int i = 0; i < words.length; i++) {
       if (words[i].length() == searchWord.length()) {
         words[i] = words[i].replace(searchWord, replaceWord);
